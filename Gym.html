@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slark Web - Gym Membership Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafc;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #c3d3f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h3 {
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+            color: #007bff;
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="datetime"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-left: 20px;
+        }
+
+        .section {
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border: 1px solid #e3e3e3;
+        }
+
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group-inline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .form-group-inline label {
+            flex-basis: 30%;
+        }
+
+        .form-group-inline input {
+            flex-basis: 65%;
+        }
+
+        .note {
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Gym Membership Form</h1>
+
+    <form action="">
+        <!-- Member Information -->
+        <div class="section">
+            <h3>1. Member Information</h3>
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" placeholder="Enter your name..." minlength="4" maxlength="16" required>
+            </div>
+
+            <div class="form-group">
+                <label for="memberid">Membership ID:</label>
+                <input type="text" id="memberid" maxlength="4">
+            </div>
+
+            <div class="form-group">
+                <label for="ph">Phone Number:</label>
+                <input type="text" id="ph" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email">
+            </div>
+        </div>
+
+        <!-- Check-In Details -->
+        <div class="section">
+            <h3>2. Check-In Details</h3>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date">
+            </div>
+
+            <div class="form-group">
+                <label for="entry">Time of Entry:</label>
+                <input type="datetime-local" id="entry">
+            </div>
+
+            <div class="form-group">
+                <label>Any Visible Symptoms (Cough, Fever, etc.):</label>
+                <div class="radio-group">
+                    <input type="radio" name="symptoms" id="symptoms_yes">Yes
+                    <input type="radio" name="symptoms" id="symptoms_no" checked>No
+                </div>
+            </div>
+        </div>
+
+        <!-- Health & Safety Screening -->
+        <div class="section">
+            <h3>3. Health & Safety Screening</h3>
+            <ul>
+                <li>
+                    <p>In the last 14 days, have you experienced any of the following symptoms?</p>
+                </li>
+            </ul>
+            <div class="checkbox-group">
+                <input type="checkbox" id="fever">Fever or chills <br>
+                <input type="checkbox" id="cough">Cough <br>
+                <input type="checkbox" id="breath">Shortness of breath or difficulty breathing <br>
+                <input type="checkbox" id="fatigue">Fatigue <br>
+                <input type="checkbox" id="headache">Headache <br>
+                <input type="checkbox" id="aches">Muscle or body aches <br>
+                <input type="checkbox" id="throat">Sore throat <br>
+                <input type="checkbox" id="none">None of the above <br>
+            </div>
+        </div>
+
+        <!-- Gym Usage -->
+        <div class="section">
+            <h3>4. Gym Usage</h3>
+            <ul>
+                <li>
+                    <p>Workout Area:</p>
+                </li>
+            </ul>
+            <div class="checkbox-group">
+                <input type="checkbox">Weightlifting <br>
+                <input type="checkbox">Cardio <br>
+                <input type="checkbox">Group Class <br>
+                <input type="checkbox">Pool <br>
+                <input type="checkbox">Other:
+                <input type="text" placeholder="Enter your preference..."> <br>
+            </div>
+
+            <ul>
+                <li>
+                    <p>Locker Room Usage:</p>
+                </li>
+            </ul>
+            <div class="radio-group">
+                <input type="radio" name="locker" checked>Yes <br>
+                <input type="radio" name="locker">No <br>
+            </div>
+        </div>
+
+        <!-- Payment Information -->
+        <div class="section">
+            <h3>5. Payment Information</h3>
+            <ul>
+                <li>
+                    <p>Payment Method:</p>
+                </li>
+            </ul>
+            <div class="checkbox-group">
+                <input type="checkbox">Credit/Debit Card <br>
+                <input type="checkbox">Cash <br>
+                <input type="checkbox">Mobile Payment (e.g., Kpay, Wavepay, Uabpay) <br>
+                <input type="checkbox">Bank Transfer <br>
+                <input type="checkbox">Membership Plan (Prepaid) <br>
+            </div>
+
+            <ul>
+                <li>
+                    <p>If paying by card, please provide the following details:</p>
+                </li>
+            </ul>
+            <div class="form-group">
+                <label for="card_name">Card Holder Name:</label>
+                <input type="text" id="card_name">
+            </div>
+            <div class="form-group">
+                <label for="card_number">Card Number:</label>
+                <input type="text" id="card_number">
+            </div>
+            <div class="form-group">
+                <label for="expiry">Expiration Date:</label>
+                <input type="date" id="expiry">
+            </div>
+            <div class="form-group">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv">
+            </div>
+
+            <ul>
+                <li>
+                    <p>If using a mobile payment method, please specify:</p>
+                </li>
+            </ul>
+            <div class="checkbox-group">
+                <input type="checkbox">Kpay <br>
+                <input type="checkbox">Wavepay <br>
+                <input type="checkbox">Uabpay <br>
+                <input type="checkbox">Other:
+                <input type="text" placeholder="Enter your payment..."> <br>
+            </div>
+
+            <ul>
+                <li>
+                    <p>If using bank transfer, please provide the following details:</p>
+                </li>
+            </ul>
+            <div class="form-group">
+                <label for="bank_name">Bank Name:</label>
+                <input type="text" id="bank_name">
+            </div>
+            <div class="form-group">
+                <label for="account_number">Account Number:</label>
+                <input type="text" id="account_number">
+            </div>
+            <div class="form-group">
+                <label for="routing_number">Routing Number:</label>
+                <input type="text" id="routing_number">
+            </div>
+            <div class="form-group">
+                <label for="amount">Payment Amount:</label>
+                <input type="number" id="amount" placeholder="$">
+            </div>
+        </div>
+
+        <!-- Emergency Contact Information -->
+        <div class="section">
+            <h3>6. Emergency Contact Information</h3>
+            <div class="form-group">
+                <label for="emergency_name">Contact Name:</label>
+                <input type="text" id="emergency_name">
+            </div>
+            <div class="form-group">
+                <label for="relationship">Relationship:</label>
+                <input type="text" id="relationship">
+            </div>
+            <div class="form-group">
+                <label for="emergency_phone">Phone Number:</label>
+                <input type="text" id="emergency_phone">
+            </div>
+        </div>
+
+        <!-- Acknowledgment & Signature -->
+        <div class="section">
+            <h3>7. Acknowledgment & Signature</h3>
+            <ul>
+                <li>
+                    <p>I acknowledge that I have truthfully answered the above questions and understand the gym's health and safety protocols.</p>
+                </li>
+            </ul>
+            <div class="form-group">
+                <label for="signature">Member's Signature:</label>
+                <input type="text" id="signature">
+            </div>
+            <div class="form-group">
+                <label for="ack_date">Date:</label>
+                <input type="date" id="ack_date">
+            </div>
+            <div class="form-group">
+                <label for="staff_initials">Staff Initials:</label>
+                <input type="text" id="staff_initials">
+            </div>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
+
